@@ -1,0 +1,23 @@
+{
+  "name": "Pedal BlueTooth para PS2",
+  "version": "1.0.0",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "SetupNovenRetro.ino.bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "SetupNovenRetro.ino.partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "SetupNovenRetro.ino.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
