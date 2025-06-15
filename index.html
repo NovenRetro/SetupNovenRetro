@@ -169,11 +169,12 @@
   <body>
     <div class="container">
       <img src="logo-novenretro.png" alt="NovenRetro">
-      <h1>Firmware de Pedal Bluetooth PS2</h1>
+      <h1>Firmware Setup NovenRetro</h1>
       <p>Conectá tu ESP32 por USB, seleccionalo entre los COM que puedan aparecerte y presioná el botón para cargarle el firmware.  
-        <br><br>Puede que sea necesario que mantengas apretado el botón de Boot de tu ESP32 mientras se realiza el proceso.</p>
+        <br><br>Puede que sea necesario que mantengas apretado el botón de Boot de tu ESP32 mientras se realiza el proceso.
+      <br><br>IMPORTANTE: Una vez cargado el firmware recuerda ingresar las credenciales de acceso a tu red WiFi, y de verificar la dirección de tu dispositivo (192.168.XXX.XXX) ya que esa será la URL para que puedas ingresar al controlador y realizar tus configuraciones.</p>
         <p>Recuerda debes ingresar desde Google Chrome o Edge en PC para que funcione correctamente.</p>
-        <h6>Este firmware convierte tu pedal en un botón X del mando PS2, ideal para jugar como en los arcades con BlueRetro.</h4>
+        <h6>Este firmware convierte tu ESP32 en un controlador para tu tira led ws2812b. En Configuración podrás determinar la cantidad de Leds de tu tira, y también el nombre y cantidad de Leds de cada segmento. Luego en Inicio podrás visualizar los segmentos y elegir el que tu quieras, o utilizar la función "Sorpréndeme" para que la elección la haga el controlador. También podrás aplicar efectos y setear los colores. </h4>
       
       <esp-web-install-button class="" manifest="manifest.json"> 
       </esp-web-install-button>
@@ -186,40 +187,7 @@
           <p>Conexiones</p>
         </div>
 
-        <div class="img-box">
-          <a href="materiales-necesarios.png" target="_blank">
-            <img src="materiales-necesarios.png" alt="Conexiones">
-          </a>
-          <p>Materiales</p>
-        </div>
-
-        <div class="img-box">
-          <a href="STLs.rar" target="_blank">
-            <img src="preview-stls.png" alt="Conexiones">
-          </a>
-          <p>Archivos STL</p>
-        </div>
-      
-        <div class="img-box">
-          <a href="config-blueretro.jpg" target="_blank">
-            <img src="config-blueretro.jpg" alt="Config BlueRetro">
-          </a>
-          <p>Config BlueRetro</p>
-        </div>
-      
-        <div class="img-box">
-          <a href="mapeo-blueretro.jpg" target="_blank">
-            <img src="mapeo-blueretro.jpg" alt="Mapeo BlueRetro">
-          </a>
-          <p>Mapeo BlueRetro</p>
-        </div>
-      </div>
-
-      <div class="blueretro-logo">
-        <a href="https://blueretro.io/" target="_blank" rel="noopener">
-          <img src="logoblueretro.png" alt="BlueRetro logo">
-        </a>
-      </div>      
+        
 
       <hr class="divider"> 
       <div class="github-link">
@@ -228,7 +196,7 @@
         </a>
       </div>      
       <footer>
-        <img src="logo-novenretro.png" alt="Logo NovenRetro" class="logo-inline"> Desarrollado por @NovenRetro · Córdoba, Argentina
+        <img src="logo-novenretro.png" alt="Logo NovenRetro" class="logo-inline"> Desarrollado por @NovenRetro · Córdoba, Argentina. Prohibida su comercialización de cualquier forma.
       </footer>
     </div>
   </body>
