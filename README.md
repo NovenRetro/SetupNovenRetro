@@ -3,8 +3,8 @@
   <img
     src="https://novenretro.github.io/SetupNovenRetro/logo-novenretro.png"
     alt="Setup NovenRetro"
-    width="200"    <!-- aquí fijas el ancho en píxeles -->
-  />
+    width="200">
+  
 </p>
 
 ## Descripción general
