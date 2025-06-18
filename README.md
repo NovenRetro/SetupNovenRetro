@@ -1,6 +1,11 @@
 # Setup NovenRetro
-
-![Setup NovenRetro](https://novenretro.github.io/SetupNovenRetro/logo-novenretro.png)
+<p align="center">
+  <img
+    src="https://novenretro.github.io/SetupNovenRetro/assets/logo-novenretro.png"
+    alt="Setup NovenRetro"
+    width="200"    <!-- aquí fijas el ancho en píxeles -->
+  />
+</p>
 
 ## Descripción general
 
