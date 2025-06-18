@@ -1,6 +1,6 @@
 # Setup NovenRetro
 
-![Setup NovenRetro](https://novenretro.github.io/SetupNovenRetro/assets/logo-novenretro.png)
+![Setup NovenRetro](https://novenretro.github.io/SetupNovenRetro/logo-novenretro.png)
 
 ## Descripción general
 
