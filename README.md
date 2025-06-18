@@ -1,7 +1,7 @@
 # Setup NovenRetro
 <p align="center">
   <img
-    src="https://novenretro.github.io/SetupNovenRetro/assets/logo-novenretro.png"
+    src="https://novenretro.github.io/SetupNovenRetro/logo-novenretro.png"
     alt="Setup NovenRetro"
     width="200"    <!-- aquí fijas el ancho en píxeles -->
   />
