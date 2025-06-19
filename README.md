@@ -1,58 +1,67 @@
 # Setup NovenRetro
+
 <p align="center">
   <img
     src="https://novenretro.github.io/SetupNovenRetro/logo-novenretro.png"
     alt="Setup NovenRetro"
     width="200">
-  
 </p>
 
 ## Descripción general
 
-**Setup NovenRetro** es una herramienta basada en ESP32 para configurar tiras LED segmentadas a través de una interfaz web moderna y responsiva. Permite:
-- Definir segmentos físicos de la tira LED.
-- Ajustar color, brillo y efectos (Glow, Rainbow, Fire…).
-- Guardar, cargar y eliminar hasta 5 presets con confirmaciones y reinicio automático.
-- Descubrimiento en red vía mDNS (`<nombre>.local`) con nombre personalizable desde la web.
-- Flasheo fácil desde navegador usando [https://novenretro.github.io/SetupNovenRetro/](https://novenretro.github.io/SetupNovenRetro/).
+**Setup NovenRetro** es una herramienta basada en ESP32 para configurar tiras LED segmentadas a través de una interfaz web moderna y responsiva.  
+
+**Novedades hasta v2.0.x**  
+- **OTA Update desde GitHub**  
+  - Comprobación de `version.txt` en tu repositorio → botón **Buscar actualización** en `/config`  
+  - Si hay nueva versión, pide confirmación y descarga el `firmware.bin`  
+  - Guarda la versión instalada en `Preferences` para futuras comparaciones  
+- **Señalización post-arranque**  
+  - Tras reinicio (incluyendo OTA) el LED azul de GPIO2 parpadea 3 s para indicar que el dispositivo está listo  
+- **Hasta 10 presets** en lugar de 5  
+- Personalización y refinamientos de UI (confirmaciones, alertas, recarga automática)
 
 ## Características principales
 
 1. **Segmentación dinámica**  
-   - Define nombre y longitud de cada segmento.
-   - Visualiza suma de LEDs y punto de inicio de cada uno.
+   - Define nombre y longitud de cada segmento  
+   - Visualiza la suma total de LEDs y el punto de inicio de cada segmento  
 
 2. **Control de color y efectos**  
-   - Color de tira y color de segmento con pickers HTML5.
-   - Efectos:
-     - **Glow** (ajustable en velocidad)
-     - **Rainbow** y **Rainbow V2**
+   - Color de tira y color de segmento con pickers HTML5  
+   - Efectos disponibles:  
+     - **Glow** (velocidad ajustable)  
+     - **Rainbow** y **Rainbow V2**  
      - **Fire**
 
 3. **Brillo y encendido**  
-   - Rango de brillo 1–10.
-   - Botón ON/OFF global.
+   - Rango de brillo 1–10  
+   - Botón global ON/OFF
 
 4. **Presets**  
-   - Hasta 5 presets guardables.
-   - Guardar, cargar y eliminar con:
-     - Mensajes de confirmación (alert/confirm).
-     - Reinicio automático del ESP32 y recarga de la página.
+   - Guarda hasta **10** configuraciones completas  
+   - Guardar, cargar y eliminar con alert/confirm y reinicio automático del ESP32
 
 5. **mDNS y nombre de dispositivo**  
-   - Descubrimiento con `<nombre>.local` (por defecto `setup-novenretro.local`).  
-   - Cambia el nombre desde **/config** → *Ruta del Dispositivo* sin recompilar.
+   - Descubrimiento via `<nombre>.local` (por defecto `setup-novenretro.local`)  
+   - Cambia el nombre desde **/config** sin recompilar
 
 6. **Flasheo desde web**  
-   - Usa la página de flasheo:  
-     `https://novenretro.github.io/SetupNovenRetro/`  
-   - Conecta el ESP32 por USB, sigue las instrucciones y carga el firmware directamente desde el navegador.
+   - Abre [https://novenretro.github.io/SetupNovenRetro/](https://novenretro.github.io/SetupNovenRetro/)  
+   - Conecta tu ESP32 por USB y selecciona el `.bin` para cargarlo directamente desde el navegador
+
+7. **OTA auto-confirmada**  
+   - `/config` → botón **Buscar actualización**  
+   - Mensajes claros: “Ya tienes la última versión…”, “¿Deseas actualizar a vX.Y.Z?”  
+
+8. **Indicador de arranque**  
+   - El LED de GPIO2 parpadea 3 s al arrancar tras cualquier reinicio
 
 ## Requisitos
 
-- ESP32 (Todos los chips compatibles)
-- Tira de LEDs WS2812 / Neopixel
-- Arduino IDE 1.8+ o PlatformIO
+- ESP32 (Serie 32, WROOM, WROVER…)  
+- Tira de LEDs WS2812 / NeoPixel  
+- Arduino IDE 1.8+ o PlatformIO  
 - Librerías:
   - `WiFi.h`
   - `WebServer.h`
@@ -60,28 +69,39 @@
   - `Preferences.h`
   - `ImprovWiFiLibrary.h`
   - `ESPmDNS.h`
+  - `HTTPClient.h`
+  - `HTTPUpdate.h`
 
 ## Instalación y flasheo
 
-1. **Desde Arduino IDE / PlatformIO**  
-   - Clona este repositorio.
-   - Selecciona tu placa ESP32.
-   - Compila y sube.
+### 1. Desde Arduino IDE / PlatformIO
+1. Clona este repositorio.
+2. Selecciona tu placa ESP32.
+3. Compila y sube el firmware.
 
-2. **Flasheo web**  
-   1. Abre [https://novenretro.github.io/SetupNovenRetro/](https://novenretro.github.io/SetupNovenRetro/).  
-   2. Conecta tu ESP32 por USB.  
-   3. Elige el puerto y firmware `.bin`.  
-   4. Haz clic en **Flash** y espera al progreso.
+### 2. Flasheo web
+1. Abre [https://novenretro.github.io/SetupNovenRetro/](https://novenretro.github.io/SetupNovenRetro/).  
+2. Conecta tu ESP32 por USB.  
+3. Elige el puerto y el firmware `.bin`.  
+4. Haz clic en **Flash** y espera al progreso.
 
 ## Uso
 
-1. Conecta tu dispositivo a la red Wi-Fi (vía Improv o credenciales guardadas).
-2. Accede a la IP o a `http://<nombre>.local` (por defecto `setup-novenretro.local`).
-3. Define segmentos en **Configuración**.
-4. Ajusta colores, efectos y brillo en la página principal.
-5. Guarda tus presets y personaliza el nombre mDNS si lo deseas.
-
+1. Al arrancar, el LED azul (GPIO2) parpadea 3 s.
+2. Conecta vía ImprovWiFi o introduce tus credenciales Wi-Fi.
+3. Accede por IP o a `http://<nombre>.local` (por defecto `setup-novenretro.local`).
+4. En **Configuración**:
+   - Define tus segmentos físicos.
+   - Personaliza nombre mDNS, título y cabecera.
+5. En la página principal:
+   - Ajusta color, efectos y brillo.
+   - Usa ON/OFF y Sorpréndeme para selección aleatoria.
+6. **Presets**:
+   - Selecciona slot, pon nombre y guarda.
+   - Carga o elimina con confirmación.
+7. **OTA**:
+   - En `/config` pulsa **Buscar actualización**.
+   - Si hay nueva versión, confirma y deja que el ESP32 reinicie.
 
 ## Contribuir
 
