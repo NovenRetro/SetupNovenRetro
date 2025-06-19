@@ -14,7 +14,14 @@
 **Novedades hasta v2.0.x**  
 - **OTA Update desde GitHub**  
   - Comprobación de `version.txt` en tu repositorio → botón **Buscar actualización** en `/config`  
-  - Si hay nueva versión, se descarga e instala **automáticamente**  
+  - Si hay nueva versión, muestra un diálogo de confirmación:
+    ```
+    Versión actual: X.X.X  
+    Nueva versión: Y.Y.Y disponible.  
+    ¿Desea actualizar a la última versión disponible?  
+    [Aceptar] [Cancelar]
+    ```
+  - Al **Aceptar**, descarga e instala automáticamente  
   - Guarda la versión instalada en `Preferences` para futuras comparaciones  
 - **Señalización post-arranque**  
   - Tras reinicio (incluyendo OTA) el LED azul de GPIO2 parpadea 3 s para indicar que el dispositivo está listo  
@@ -50,10 +57,12 @@
    - Abre [https://novenretro.github.io/SetupNovenRetro/](https://novenretro.github.io/SetupNovenRetro/)  
    - Conecta tu ESP32 por USB y selecciona el `.bin` para cargarlo directamente desde el navegador
 
-7. **OTA directa**  
+7. **OTA con confirmación**  
    - En `/config`, al pulsar **Buscar actualización**:
-     - Si la versión en GitHub es más reciente que la guardada, se descarga e instala sin pedir confirmación manual.
-     - Mensajes de estado: “Ya tienes la última versión…”, “Falló actualización: …”
+     - Si la versión en GitHub es igual a la guardada, muestra “Ya tienes la última versión…”  
+     - Si es más reciente, aparece el diálogo de confirmación con versión actual vs. nueva  
+     - Al **Aceptar**, descarga e instala automáticamente; al **Cancelar**, no hace nada  
+     - Mensajes de estado: “Falló actualización: …” en caso de error
 
 8. **Indicador de arranque**  
    - El LED de GPIO2 parpadea 3 s al arrancar tras cualquier reinicio
@@ -101,7 +110,7 @@
    - Selecciona slot, pon nombre y guarda.  
    - Carga o elimina con confirmación.  
 7. **OTA**:  
-   - En `/config`, pulsa **Buscar actualización** (actualiza automáticamente si hay nueva versión).
+   - En `/config`, pulsa **Buscar actualización** (pide confirmación si hay nueva versión, **Aceptar** / **Cancelar**).
 
 ## Contribuir
 
