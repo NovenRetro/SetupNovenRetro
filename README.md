@@ -76,8 +76,8 @@
 ## Instalación y flasheo
 
 ### 1. Desde Arduino IDE / PlatformIO
-1. Clona este repositorio.
-2. Selecciona tu placa ESP32.
+1. Clona este repositorio.  
+2. Selecciona tu placa ESP32.  
 3. Compila y sube el firmware.
 
 ### 2. Flasheo web
@@ -96,7 +96,7 @@
    - Personaliza nombre mDNS, título y cabecera.  
 5. En la página principal:  
    - Ajusta color, efectos y brillo.  
-   - Usa ON/OFF y Sorpréndeme para selección aleatoria.  
+   - Usa ON/OFF y **Sorpréndeme** para selección aleatoria.  
 6. **Presets**:  
    - Selecciona slot, pon nombre y guarda.  
    - Carga o elimina con confirmación.  
@@ -115,5 +115,5 @@
 Este proyecto está bajo la [MIT License](LICENSE).  
 © NovenRetro 2025 — Todos los derechos reservados.
 
----
+---  
 **Web de flasheo y documentación** → https://novenretro.github.io/SetupNovenRetro/  
