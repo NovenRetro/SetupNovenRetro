@@ -14,7 +14,7 @@
 **Novedades hasta v2.0.x**  
 - **OTA Update desde GitHub**  
   - Comprobación de `version.txt` en tu repositorio → botón **Buscar actualización** en `/config`  
-  - Si hay nueva versión, pide confirmación y descarga el `firmware.bin`  
+  - Si hay nueva versión, se descarga e instala **automáticamente**  
   - Guarda la versión instalada en `Preferences` para futuras comparaciones  
 - **Señalización post-arranque**  
   - Tras reinicio (incluyendo OTA) el LED azul de GPIO2 parpadea 3 s para indicar que el dispositivo está listo  
@@ -50,9 +50,10 @@
    - Abre [https://novenretro.github.io/SetupNovenRetro/](https://novenretro.github.io/SetupNovenRetro/)  
    - Conecta tu ESP32 por USB y selecciona el `.bin` para cargarlo directamente desde el navegador
 
-7. **OTA auto-confirmada**  
-   - `/config` → botón **Buscar actualización**  
-   - Mensajes claros: “Ya tienes la última versión…”, “¿Deseas actualizar a vX.Y.Z?”  
+7. **OTA directa**  
+   - En `/config`, al pulsar **Buscar actualización**:
+     - Si la versión en GitHub es más reciente que la guardada, se descarga e instala sin pedir confirmación manual.
+     - Mensajes de estado: “Ya tienes la última versión…”, “Falló actualización: …”
 
 8. **Indicador de arranque**  
    - El LED de GPIO2 parpadea 3 s al arrancar tras cualquier reinicio
@@ -87,21 +88,20 @@
 
 ## Uso
 
-1. Al arrancar, el LED azul (GPIO2) parpadea 3 s.
-2. Conecta vía ImprovWiFi o introduce tus credenciales Wi-Fi.
-3. Accede por IP o a `http://<nombre>.local` (por defecto `setup-novenretro.local`).
-4. En **Configuración**:
-   - Define tus segmentos físicos.
-   - Personaliza nombre mDNS, título y cabecera.
-5. En la página principal:
-   - Ajusta color, efectos y brillo.
-   - Usa ON/OFF y Sorpréndeme para selección aleatoria.
-6. **Presets**:
-   - Selecciona slot, pon nombre y guarda.
-   - Carga o elimina con confirmación.
-7. **OTA**:
-   - En `/config` pulsa **Buscar actualización**.
-   - Si hay nueva versión, confirma y deja que el ESP32 reinicie.
+1. Al arrancar, el LED azul (GPIO2) parpadea 3 s.  
+2. Conecta vía ImprovWiFi o introduce tus credenciales Wi-Fi.  
+3. Accede por IP o a `http://<nombre>.local` (por defecto `setup-novenretro.local`).  
+4. En **Configuración**:  
+   - Define tus segmentos físicos.  
+   - Personaliza nombre mDNS, título y cabecera.  
+5. En la página principal:  
+   - Ajusta color, efectos y brillo.  
+   - Usa ON/OFF y Sorpréndeme para selección aleatoria.  
+6. **Presets**:  
+   - Selecciona slot, pon nombre y guarda.  
+   - Carga o elimina con confirmación.  
+7. **OTA**:  
+   - En `/config`, pulsa **Buscar actualización** (actualiza automáticamente si hay nueva versión).
 
 ## Contribuir
 
