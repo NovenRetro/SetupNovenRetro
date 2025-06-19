@@ -6,15 +6,15 @@
       "chipFamily": "ESP32",
       "parts": [
         {
-          "path": "SetupNovenRetro.ino.bootloader.bin",
+          "path": "firmware.bootloader.bin",
           "offset": 4096
         },
         {
-          "path": "SetupNovenRetro.ino.partitions.bin",
+          "path": "firmware.partitions.bin",
           "offset": 32768
         },
         {
-          "path": "SetupNovenRetro.ino.bin",
+          "path": "firmware.bin",
           "offset": 65536
         }
       ]
